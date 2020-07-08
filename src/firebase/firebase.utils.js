@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
-import 'firebase/firestore';
+import 'firebase/app';
 import 'firebase/auth';
-
+import 'firebase/firestore';
 const config= {
     apiKey: "AIzaSyATalNNCQU4MtgC7tB-UCRj4qk4awCv4QY",
     authDomain: "crwn-db-d74d4.firebaseapp.com",
@@ -13,7 +13,10 @@ const config= {
     measurementId: "G-K0PWB2TF46"
   };
 
-
+ export const createUserProfileDocument = async (userAuth,additionalData) =>{
+     if(!userAuth) return;
+     console.log(firestore.doc('users/128fdashadu'))
+ };
   firebase.initializeApp(config);
   export const auth=firebase.auth();
   export const firestore = firebase.firestore();
